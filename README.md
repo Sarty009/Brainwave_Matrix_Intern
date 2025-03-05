@@ -63,11 +63,41 @@ python phiscanner.py -f urls.txt -o results.csv
 python phiscanner.py --gui
 ```
 
-## Docker Support
-To build and run using Docker:
+## Running the Tool
+
+### 1️⃣ Open Your Project Folder
+```sh
+cd phiscan
+```
+
+### 2️⃣ Ensure Dependencies Are Installed
+```sh
+pip install -r requirements.txt
+```
+
+### 3️⃣ Run the Scanner
+- **Scan a single URL:**
+  ```sh
+  python phiscanner.py https://example.com
+  ```
+- **Scan multiple URLs from a file:**
+  ```sh
+  python phiscanner.py -f urls.txt
+  ```
+- **Save scan results (JSON/CSV):**
+  ```sh
+  python phiscanner.py -f urls.txt -o results.json
+  ```
+
+### 4️⃣ (Optional) Run the GUI
+```sh
+python phiscanner.py --gui
+```
+
+### 5️⃣ (Optional) Run with Docker
 ```sh
 docker build -t phiscanner .
-docker run --rm -v $(pwd):/app phiscanner python phiscanner.py <URL>
+docker run --rm -v $(pwd):/app phiscanner python phiscanner.py https://example.com
 ```
 
 ## Contributing
